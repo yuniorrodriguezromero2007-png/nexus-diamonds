@@ -7,207 +7,260 @@
 
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#080d18;color:white;font-family:Arial}
-header{background:#101c32;padding:22px;text-align:center;border-bottom:2px solid #00d9ff}
-.logo{font-size:27px;font-weight:bold;color:#00e5ff}
-header p{color:#b9c9df}
-.contenedor{max-width:950px;margin:auto;padding:15px}
-.banner{background:linear-gradient(120deg,#142b50,#07101f);padding:35px 15px;text-align:center;border-radius:15px;margin:15px 0}
-.banner h1{color:#00e5ff}
-.boton{display:inline-block;background:#00d9ef;color:#06101c;padding:13px 20px;border:0;border-radius:8px;font-weight:bold;text-decoration:none}
-.titulo{text-align:center;color:#00e5ff;margin:30px 0 20px}
-.juegos{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
-.card{background:#14233d;border:1px solid #29496b;border-radius:13px;padding:20px 8px;text-align:center;color:white;text-decoration:none}
-.card span{font-size:38px}
-.card h3{color:#00e5ff}
-.seccion{margin-top:30px;padding:20px 14px;border-radius:15px;background:#111e34}
-.ff{background:linear-gradient(140deg,#310909,#160d17);border:1px solid #a52b2b}
-.ff h2{color:#ff4141;text-align:center}
-input,select{width:100%;padding:14px;margin:8px 0;background:#091426;border:1px solid #45617f;border-radius:8px;color:white}
-.pagos{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:15px 0}
-.pagos button{padding:12px 5px;border:1px solid #00d9ef;background:#14233d;color:white;border-radius:8px;font-weight:bold}
-.pagos button.activo{background:#00d9ef;color:#07101d}
-.productos{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.producto{background:#18243a;border:1px solid #40516c;border-radius:10px;padding:15px;text-align:center}
-.producto strong{display:block;font-size:18px}
-.producto p{color:#ffcf52;font-weight:bold}
-.producto button{background:#e52d36;color:white;border:0;padding:10px;border-radius:7px}
-.nota{text-align:center;color:#aebbd0;font-size:13px}
-footer{text-align:center;color:#8b9ab2;padding:25px;font-size:13px}
-@media(max-width:450px){.juegos,.productos{grid-template-columns:1fr}.pagos button{font-size:12px}}
+body{
+ margin:0;
+ background:#080d1b;
+ color:white;
+ font-family:Arial,sans-serif;
+}
+header{
+ background:#101c35;
+ padding:22px;
+ text-align:center;
+ border-bottom:2px solid #00d9ff;
+}
+header h1{color:#00d9ff;margin:0}
+header p{margin:8px 0 0}
+.container{padding:18px;max-width:850px;margin:auto}
+.banner{
+ background:linear-gradient(120deg,#063b75,#11172d);
+ padding:30px 15px;
+ text-align:center;
+ border-radius:15px;
+ margin:20px 0;
+}
+.banner h2{color:#00eaff}
+.games{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:14px;
+}
+.game{
+ background:#15223d;
+ border:1px solid #00bfff;
+ border-radius:13px;
+ padding:25px 8px;
+ text-align:center;
+ cursor:pointer;
+ font-size:19px;
+ font-weight:bold;
+}
+.game:hover{background:#20395f}
+button{
+ background:#00bfff;
+ color:#06101d;
+ border:0;
+ border-radius:8px;
+ padding:12px;
+ font-weight:bold;
+ cursor:pointer;
+}
+.back{margin-bottom:20px}
+.card{
+ background:#15223d;
+ padding:16px;
+ border-radius:12px;
+ margin:13px 0;
+}
+h2,h3{color:#00d9ff}
+input,select{
+ width:100%;
+ padding:13px;
+ border-radius:8px;
+ border:1px solid #00bfff;
+ background:#0b1428;
+ color:white;
+ margin:8px 0;
+}
+.package{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ gap:10px;
+ border-bottom:1px solid #34435c;
+ padding:13px 0;
+}
+.package button{min-width:85px}
+.hidden{display:none}
+footer{
+ text-align:center;
+ padding:25px;
+ color:#9baac4;
+}
 </style>
 </head>
 
 <body>
 
 <header>
-<div class="logo">💎 NEXUS DIAMONDS</div>
+<h1>💎 NEXUS DIAMONDS</h1>
 <p>Tu tienda de recargas de videojuegos</p>
 </header>
 
-<div class="contenedor">
+<main id="home" class="container">
 
-<section class="banner">
-<h1>BIENVENIDO A NEXUS</h1>
-<p>Tu mundo de videojuegos comienza aquí.</p>
-<a href="#juegos" class="boton">EXPLORAR JUEGOS</a>
-</section>
-
-<h2 class="titulo" id="juegos">🎮 NUESTROS JUEGOS</h2>
-
-<div class="juegos">
-<a class="card" href="#freefire">
-<span>🔥</span><h3>FREE FIRE</h3>
-<p>Diamantes y membresías</p>
-</a>
-
-<div class="card"><span>🎯</span><h3>PUBG MOBILE</h3><p>Próximamente</p></div>
-<div class="card"><span>⚔️</span><h3>CALL OF DUTY</h3><p>Próximamente</p></div>
-<div class="card"><span>🌟</span><h3>MOBILE LEGENDS</h3><p>Próximamente</p></div>
+<div class="banner">
+<h2>BIENVENIDO A NEXUS DIAMONDS</h2>
+<p>Selecciona tu juego favorito</p>
 </div>
 
-<section class="seccion ff" id="freefire">
+<div class="games">
+<div class="game" onclick="openFreeFire()">🔥 FREE FIRE</div>
+<div class="game" onclick="comingSoon()">🎯 PUBG MOBILE</div>
+<div class="game" onclick="comingSoon()">⚔️ CALL OF DUTY</div>
+<div class="game" onclick="comingSoon()">🌟 MOBILE LEGENDS</div>
+</div>
 
+</main>
+
+<main id="freefire" class="container hidden">
+
+<button class="back" onclick="goHome()">⬅ VOLVER A LOS JUEGOS</button>
+
+<div class="banner">
 <h2>🔥 FREE FIRE</h2>
-<p class="nota">Introduce los datos de tu cuenta.</p>
+<p>Recarga tus diamantes de forma sencilla</p>
+</div>
 
-<label>Región</label>
+<div class="card">
+<h3>🌎 REGIÓN</h3>
 <select id="region">
-<option value="">Seleccionar región</option>
 <option>LATAM</option>
 <option>Brasil</option>
-<option>Estados Unidos</option>
+<option>USA</option>
 </select>
 
-<label>ID del jugador</label>
-<input id="jugador" type="number" placeholder="Introduce tu ID">
-
-<button class="boton" onclick="consultar()" style="width:100%">
-BUSCAR JUGADOR
-</button>
-
-<p id="resultado" class="nota"></p>
-
-<h3 style="text-align:center;color:#ffcf52">💳 MÉTODO DE PAGO</h3>
-
-<div class="pagos">
-<button id="btncup" onclick="mostrar('cup')">🇨🇺 CUP</button>
-<button id="btnsaldo" onclick="mostrar('saldo')">📱 SALDO</button>
-<button id="btnusdt" onclick="mostrar('usdt')">💵 USDT</button>
+<h3>🆔 ID DEL JUGADOR</h3>
+<input id="playerId" placeholder="Escribe tu ID de Free Fire">
+<button onclick="findPlayer()">BUSCAR JUGADOR</button>
+<p id="playerMessage"></p>
 </div>
 
-<h3 id="tituloPrecios" style="text-align:center;color:#ff4141"></h3>
-
-<div class="productos" id="lista"></div>
-
-<h2 style="text-align:center;color:#ff4141;margin-top:35px">
-🎁 OFERTAS EXTRAS
-</h2>
-
-<div class="productos" id="extras"></div>
-
-<p class="nota">
-Los pedidos y pagos estarán disponibles cuando conectemos el sistema de ventas.
-</p>
-
-</section>
+<div class="card">
+<h3>💎 MÉTODO DE PAGO</h3>
+<select id="payment" onchange="showPrices()">
+<option value="cup">Tarjeta CUP</option>
+<option value="saldo">Saldo móvil</option>
+<option value="usdt">USDT</option>
+</select>
 </div>
+
+<div class="card">
+<h3>💎 PAQUETES DE DIAMANTES</h3>
+<div id="diamondList"></div>
+</div>
+
+<div class="card">
+<h3>🎁 MEMBRESÍAS Y OFERTAS</h3>
+<div id="extraList"></div>
+</div>
+
+</main>
 
 <footer>
-💎 NEXUS DIAMONDS<br>
-© 2026 Todos los derechos reservados.
+© 2026 NEXUS DIAMONDS<br>
+Todos los derechos reservados.
 </footer>
 
 <script>
-
-const diamantes={
-cup:[
-["110","900"],["341","2700"],["572","4500"],
-["1166","9000"],["2398","16500"],["6160","40600"]
-],
-saldo:[
-["110","240"],["220","480"],["341","720"],
-["572","1200"],["1166","2400"],["2398","4800"],["6160","11500"]
-],
-usdt:[
-["110","0.78"],["341","2.34"],["572","3.96"],
-["1166","7.36"],["2398","14.60"],["6160","36.85"]
-]
+const prices = {
+ cup: [
+ ["110 💎","900 CUP"],
+ ["341 💎","2,700 CUP"],
+ ["572 💎","4,500 CUP"],
+ ["1,166 💎","9,000 CUP"],
+ ["2,398 💎","16,500 CUP"],
+ ["6,160 💎","40,600 CUP"]
+ ],
+ saldo: [
+ ["110 💎","240 saldo"],
+ ["220 💎","480 saldo"],
+ ["341 💎","720 saldo"],
+ ["572 💎","1,200 saldo"],
+ ["1,166 💎","2,400 saldo"],
+ ["2,398 💎","4,800 saldo"],
+ ["6,160 💎","11,500 saldo"]
+ ],
+ usdt: [
+ ["110 💎","0.78 USDT"],
+ ["341 💎","2.34 USDT"],
+ ["572 💎","3.96 USDT"],
+ ["1,166 💎","7.36 USDT"],
+ ["2,398 💎","14.60 USDT"],
+ ["6,160 💎","36.85 USDT"]
+ ]
 };
 
-const extras={
-cup:[
-["Pase Booyah","4850"],
-["Membresía semanal","2800"],
-["Membresía mensual","13200"]
-],
-saldo:[
-["Pase Booyah","Consultar precio"],
-["Membresía semanal","Consultar precio"],
-["Membresía mensual","Consultar precio"]
-],
-usdt:[
-["Pase Booyah","1.51"],
-["Membresía semanal","8.02"],
-["Membresía mensual","1.81"]
-]
+const extras = {
+ cup: [
+ ["Pase Booyah","4,850 CUP"],
+ ["Membresía semanal","2,800 CUP"],
+ ["Membresía mensual","13,200 CUP"]
+ ],
+ saldo: [
+ ["Pase Booyah","Consultar precio"],
+ ["Membresía semanal","Consultar precio"],
+ ["Membresía mensual","Consultar precio"]
+ ],
+ usdt: [
+ ["Pase Booyah","1.51 USDT"],
+ ["Membresía semanal","8.02 USDT"],
+ ["Membresía mensual","1.81 USDT"]
+ ]
 };
 
-let metodo="cup";
-
-function mostrar(tipo){
-metodo=tipo;
-
-["cup","saldo","usdt"].forEach(m=>{
-document.getElementById("btn"+m).classList.toggle("activo",m===tipo);
-});
-
-let nombres={cup:"PRECIOS EN CUP",saldo:"PRECIOS EN SALDO MÓVIL",usdt:"PRECIOS EN USDT"};
-
-document.getElementById("tituloPrecios").textContent="💎 "+nombres[tipo];
-
-document.getElementById("lista").innerHTML=diamantes[tipo].map(p=>`
-<div class="producto">
-<strong>💎 ${p[0]} DIAMANTES</strong>
-<p>${p[1]} ${tipo==="cup"?"CUP":tipo==="saldo"?"SALDO":"USDT"}</p>
-<button onclick="seleccionar('${p[0]}')">SELECCIONAR</button>
-</div>`).join("");
-
-document.getElementById("extras").innerHTML=extras[tipo].map(p=>`
-<div class="producto">
-<strong>🎁 ${p[0]}</strong>
-<p>${p[1]} ${tipo==="cup"?"CUP":tipo==="saldo"?"": "USDT"}</p>
-<button onclick="seleccionar('${p[0]}')">SELECCIONAR</button>
-</div>`).join("");
+function openFreeFire(){
+ document.getElementById("home").classList.add("hidden");
+ document.getElementById("freefire").classList.remove("hidden");
+ showPrices();
+ window.scrollTo(0,0);
 }
 
-function consultar(){
-let id=document.getElementById("jugador").value;
-let region=document.getElementById("region").value;
-
-if(!id||!region){
-alert("Introduce tu ID y selecciona tu región.");
-return;
+function goHome(){
+ document.getElementById("freefire").classList.add("hidden");
+ document.getElementById("home").classList.remove("hidden");
+ window.scrollTo(0,0);
 }
 
-document.getElementById("resultado").textContent=
-"Consulta de nombre próximamente. Todavía debemos conectar el servicio de jugadores.";
+function comingSoon(){
+ alert("¡Próximamente disponible en NEXUS DIAMONDS!");
 }
 
-function seleccionar(producto){
-let id=document.getElementById("jugador").value;
-let region=document.getElementById("region").value;
-
-if(!id||!region){
-alert("Primero introduce tu ID y selecciona tu región.");
-return;
+function findPlayer(){
+ const id=document.getElementById("playerId").value.trim();
+ const msg=document.getElementById("playerMessage");
+ if(!id){
+  msg.textContent="Escribe primero tu ID.";
+  return;
+ }
+ msg.textContent="La búsqueda real del jugador estará disponible próximamente.";
 }
 
-alert("Has seleccionado: "+producto+". El sistema de pedidos estará disponible próximamente.");
+function showPrices(){
+ const method=document.getElementById("payment").value;
+
+ document.getElementById("diamondList").innerHTML=
+ prices[method].map(item=>`
+ <div class="package">
+ <span>${item[0]} — ${item[1]}</span>
+ <button onclick="selectItem('${item[0]}')">ELEGIR</button>
+ </div>
+ `).join("");
+
+ document.getElementById("extraList").innerHTML=
+ extras[method].map(item=>`
+ <div class="package">
+ <span>${item[0]} — ${item[1]}</span>
+ <button onclick="selectItem('${item[0]}')">ELEGIR</button>
+ </div>
+ `).join("");
 }
 
-mostrar("cup");
-
+function selectItem(item){
+ alert("Has seleccionado: "+item+
+ "\nLos pedidos y pagos estarán disponibles próximamente.");
+}
 </script>
+
 </body>
 </html>
