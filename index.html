@@ -12,56 +12,111 @@
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #080d1b;
+  background: #080d1c;
   color: white;
+  font-family: Arial, sans-serif;
 }
 
 header {
-  background: #101b35;
   padding: 25px 15px;
   text-align: center;
+  background: linear-gradient(135deg,#101d3d,#182b55);
   border-bottom: 2px solid #00d9ff;
 }
 
-header h1 {
-  color: #00d9ff;
-  margin: 0;
-  font-size: 28px;
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+  color: #00e5ff;
 }
 
 header p {
-  color: #cbd5e1;
+  color: #c5d5f5;
 }
 
-main {
-  padding: 20px;
+.hero {
   text-align: center;
+  padding: 45px 15px;
 }
 
-h2 {
-  color: #00d9ff;
+.hero h2 {
+  font-size: 30px;
+  color: #00e5ff;
+}
+
+.hero p {
+  color: #b8c5df;
+}
+
+.boton {
+  display: inline-block;
+  padding: 13px 25px;
+  background: #00c8ed;
+  color: #061225;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  margin-top: 12px;
+}
+
+.contenedor {
+  max-width: 950px;
+  margin: auto;
+  padding: 20px;
+}
+
+h2.titulo {
+  text-align: center;
+  color: #00e5ff;
+  margin-bottom: 25px;
 }
 
 .juegos {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  margin-top: 25px;
+  grid-template-columns: repeat(2,1fr);
+  gap: 16px;
 }
 
-.juego {
+.card {
   background: #14213d;
+  border: 1px solid #244b77;
+  border-radius: 14px;
   padding: 25px 10px;
-  border-radius: 12px;
-  border: 1px solid #00d9ff;
-  font-weight: bold;
+  text-align: center;
+}
+
+.card .icono {
+  font-size: 40px;
+}
+
+.card h3 {
+  color: #00e5ff;
+}
+
+.card p {
+  color: #bdc9df;
+  font-size: 14px;
+}
+
+.contacto {
+  margin-top: 35px;
+  padding: 30px 15px;
+  text-align: center;
+  background: #101b35;
+  border-radius: 14px;
 }
 
 footer {
   text-align: center;
   padding: 25px;
-  color: #94a3b8;
+  color: #8999b7;
+  font-size: 13px;
+}
+
+@media(max-width:450px) {
+  .juegos {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
 </head>
@@ -69,20 +124,53 @@ footer {
 <body>
 
 <header>
-  <h1>💎 NEXUS DIAMONDS</h1>
-  <p>Tu tienda de recargas de videojuegos</p>
+  <div class="logo">💎 NEXUS DIAMONDS</div>
+  <p>Tu mundo de recargas comienza aquí</p>
 </header>
 
-<main>
-  <h2>🎮 NUESTROS JUEGOS</h2>
-  <p>Selecciona tu juego favorito</p>
+<section class="hero">
+  <h2>BIENVENIDO A NEXUS</h2>
+  <p>Recargas para tus videojuegos favoritos.</p>
+  <a href="#juegos" class="boton">EXPLORAR JUEGOS</a>
+</section>
+
+<main class="contenedor" id="juegos">
+
+  <h2 class="titulo">🎮 NUESTROS JUEGOS</h2>
 
   <div class="juegos">
-    <div class="juego">🔥 FREE FIRE</div>
-    <div class="juego">🎯 PUBG MOBILE</div>
-    <div class="juego">⚔️ CALL OF DUTY</div>
-    <div class="juego">🌟 MOBILE LEGENDS</div>
+
+    <div class="card">
+      <div class="icono">🔥</div>
+      <h3>FREE FIRE</h3>
+      <p>Diamantes y membresías.</p>
+    </div>
+
+    <div class="card">
+      <div class="icono">🎯</div>
+      <h3>PUBG MOBILE</h3>
+      <p>Recargas para tu cuenta.</p>
+    </div>
+
+    <div class="card">
+      <div class="icono">⚔️</div>
+      <h3>CALL OF DUTY</h3>
+      <p>Puntos y recargas.</p>
+    </div>
+
+    <div class="card">
+      <div class="icono">🌟</div>
+      <h3>MOBILE LEGENDS</h3>
+      <p>Diamantes para jugar.</p>
+    </div>
+
   </div>
+
+  <div class="contacto">
+    <h2>💎 NEXUS DIAMONDS</h2>
+    <p>Estamos preparando nuestra tienda para ti.</p>
+  </div>
+
 </main>
 
 <footer>
