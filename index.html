@@ -200,8 +200,24 @@ footer{
 </div>
 
 <div class="card">
-<h3>💎 MÉTODO DE PAGO</h3>
-<select id="payment" onchange="showPrices()">
+<h3>💎 ELIGE TU MÉTODO DE PAGO</h3>
+
+<button style="width:100%;padding:18px;margin:7px 0;font-size:16px"
+onclick="document.getElementById('payment').value='cup';showPrices()">
+💳 TARJETA CUP
+</button>
+
+<button style="width:100%;padding:18px;margin:7px 0;font-size:16px"
+onclick="document.getElementById('payment').value='saldo';showPrices()">
+📱 SALDO MÓVIL
+</button>
+
+<button style="width:100%;padding:18px;margin:7px 0;font-size:16px"
+onclick="document.getElementById('payment').value='usdt';showPrices()">
+💵 USDT
+</button>
+
+<select id="payment" onchange="showPrices()" style="display:none">
 <option value="cup">Tarjeta CUP</option>
 <option value="saldo">Saldo móvil</option>
 <option value="usdt">USDT</option>
