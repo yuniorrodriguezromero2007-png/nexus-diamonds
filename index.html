@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -155,17 +156,20 @@ footer{
     background-position: center;
     background-repeat: no-repeat;
 }body {
-    background: linear-gradient(135deg, #050816, #10102b, #190d30, #050816);
+    background-color: #050816;
+    background-image:
+    radial-gradient(circle at 10% 15%, #1266db 0 3px, transparent 5px),
+    radial-gradient(circle at 25% 40%, #168bff 0 4px, transparent 7px),
+    radial-gradient(circle at 45% 20%, #00bfff 0 3px, transparent 6px),
+    radial-gradient(circle at 70% 35%, #168bff 0 5px, transparent 8px),
+    radial-gradient(circle at 90% 15%, #1266db 0 4px, transparent 7px),
+    radial-gradient(circle at 15% 75%, #00bfff 0 4px, transparent 7px),
+    radial-gradient(circle at 55% 80%, #168bff 0 5px, transparent 8px),
+    radial-gradient(circle at 85% 85%, #1266db 0 4px, transparent 7px),
+    linear-gradient(135deg, #050816, #10102b, #190d30);
     background-attachment: fixed;
-    background-size: 300% 300%;background-image:
-radial-gradient(ellipse at 10% 15%, #168bff 0 3px, transparent 5px),
-radial-gradient(ellipse at 25% 40%, #1266db 0 4px, transparent 7px),
-radial-gradient(ellipse at 45% 20%, #00bfff 0 3px, transparent 6px),
-radial-gradient(ellipse at 70% 35%, #168bff 0 5px, transparent 8px),
-radial-gradient(ellipse at 90% 15%, #1266db 0 4px, transparent 7px),
-radial-gradient(ellipse at 15% 75%, #00bfff 0 4px, transparent 7px),
-radial-gradient(ellipse at 55% 80%, #168bff 0 5px, transparent 8px),
-radial-gradient(ellipse at 85% 85%, #1266db 0 4px, transparent 7px);
+    background-size: 100% 100%;
+}
 }.game-title {
     text-align: center;
     color: #00d9ff;
