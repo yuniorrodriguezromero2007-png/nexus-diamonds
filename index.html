@@ -217,6 +217,31 @@ footer{
         padding: 10px;
         margin-bottom: 10px;
     
+}#themeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid #00d9ff;
+    background: #101c35;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    }body.light-mode {
+    background: #ffffff !important;
+    color: #111111 !important;
+}
+
+body.light-mode header {
+    background: #ffffff !important;
+    color: #111111 !important;
+}
+
+body.light-mode section {
+    background: #f1f1f1 !important;
+    color: #111111 !important;
 }
 </style>
 </head>
@@ -418,5 +443,18 @@ function selectItem(item){
  "\nLos pedidos y pagos estarán disponibles próximamente.");
 }
 </script>
+ <script>
+function toggleTheme() {
+    document.body.classList.toggle("light-mode");
+
+    const button = document.getElementById("themeButton");
+
+    if (document.body.classList.contains("light-mode")) {
+        button.textContent = "🌙";
+    } else {
+        button.textContent = "☀️";
+    }
+}
+ </script>
 </body>
 </html>
