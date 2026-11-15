@@ -175,6 +175,35 @@ footer{
     background: linear-gradient(90deg, #00d9ff, #a020f0);
     box-shadow: 0 0 12px #00d9ff;
     border-radius: 10px;
+}@media (max-width: 600px) {
+    header {
+        padding: 10px;
+    }
+
+    header img {
+        max-height: 130px;
+        object-fit: contain;
+    }
+
+    .game-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .game {
+        min-height: 110px;
+    }
+
+    .game-title {
+        font-size: 19px;
+        margin: 15px 0 8px;
+    }
+
+    section {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
 }
 </style>
 </head>
