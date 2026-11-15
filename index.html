@@ -447,14 +447,23 @@ function selectItem(item){
 function toggleTheme() {
     document.body.classList.toggle("light-mode");
 
-    const button = document.getElementById("themeButton");
+    const isLight = document.body.classList.contains("light-mode");
 
-    if (document.body.classList.contains("light-mode")) {
-        button.textContent = "🌙";
-    } else {
-        button.textContent = "☀️";
-    }
+    localStorage.setItem("nexusTheme", isLight ? "light" : "dark");
+
+    document.getElementById("themeButton").textContent = isLight ? "🌙" : "☀️";
 }
+
+window.onload = function() {
+    const savedTheme = localStorage.getItem("nexusTheme");
+
+    if (savedTheme === "light") {
+        document.body.classList.add("light-mode");
+        document.getElementById("themeButton").textContent = "🌙";
+    } else {
+        document.getElementById("themeButton").textContent = "☀️";
+    }
+};
  </script>
 </body>
 </html>
