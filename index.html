@@ -196,10 +196,38 @@ function renderOrders(){
  el.className='card table-wrap';el.innerHTML='<table class="table"><thead><tr><th>Tipo</th><th>Detalle</th><th>Fecha</th><th>Estado</th></tr></thead><tbody>'+items.map(o=>'<tr><td>'+escapeHtml(o.type)+'</td><td>'+escapeHtml(o.name)+'<br><small>'+escapeHtml(o.detail)+'</small></td><td>'+escapeHtml(o.date)+'</td><td>'+escapeHtml(o.status)+'</td></tr>').join('')+'</tbody></table>';
 }
 function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function saveProfile(){
- localStorage.setItem('nexusDemoProfile',JSON.stringify({name:document.getElementById('customerName').value,email:document.getElementById('customerEmail').value}));
- document.getElementById('profileMessage').textContent='Datos guardados solo en este dispositivo; todavía no existe una cuenta real.';
-}
+async function registerCustomer(){
+ const name=document.getElementById('customerName').value.trim();
+ const email=document.getElementById('customerEmail').value.trim();
+ const password=document.getElementById('customerPassword').value;
+
+ const message=document.getElementById('profileMessage');
+
+ if(!name || !email || !password){
+   message.textContent='Completa todos los campos.';
+   return;
+ }
+
+ if(password.length<8){
+   message.textContent='La contraseña debe tener al menos 8 caracteres.';
+   return;
+ }
+
+ message.textContent='Creando tu cuenta...';
+
+ try{
+   const response=await fetch('https://nexus-diamonds-api.yuniorrodriguezromero-2007.workers.dev/api/register',{
+     method:'POST',
+     headers:{'Content-Type':'application/json'},
+     body:JSON.stringify({name,email,password})
+   });
+
+   const result=await response.json();
+   message.textContent=result.message || 'Respuesta recibida del servidor.';
+ }catch(error){
+   message.textContent='No se pudo conectar con el servidor.';
+ }
+    }
 function renderPackages(){
  document.getElementById('packages').innerHTML=demoPackages.map(p=>'<article class="card package"><div class="game-emoji">💎</div><h3>'+p.name+'</h3><div class="price">'+p.price+'</div><button class="primary" onclick="addDemoOrder(\''+p.name+'\')">Seleccionar</button></article>').join('');
 }
