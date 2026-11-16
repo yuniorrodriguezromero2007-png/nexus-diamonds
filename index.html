@@ -90,9 +90,29 @@ body.light{--bg:#eef3fb;--panel:#fff;--panel2:#e3eaf6;--text:#10182a;--muted:#56
   </div>
 </section>
 
-<section id="orders" class="section">
-  <div class="section-head"><h2>📦 Mis pedidos</h2></div>
-  <div id="ordersList" class="empty">Todavía no tienes pedidos de demostración.</div>
+<section id="account" class="section">
+  <div class="section-head">
+    <h2>👤 Mi cuenta</h2>
+  </div>
+
+  <div class="card form">
+    <h3>Crear una cuenta</h3>
+
+    <label>Nombre</label>
+    <input class="field" id="customerName" placeholder="Tu nombre">
+
+    <label>Correo electrónico</label>
+    <input class="field" id="customerEmail" type="email" placeholder="Tu correo">
+
+    <label>Contraseña</label>
+    <input class="field" id="customerPassword" type="password" placeholder="Mínimo 8 caracteres">
+
+    <button class="primary" onclick="registerCustomer()">
+      Registrarme
+    </button>
+
+    <p id="profileMessage" class="muted"></p>
+  </div>
 </section>
 
 <section id="account" class="section">
