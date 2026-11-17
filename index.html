@@ -14,6 +14,39 @@ button,input,select{font:inherit}button{cursor:pointer}.topbar{position:sticky;t
 .sidebar{padding:22px 14px;border-right:1px solid var(--line);background:#0c1426}.nav-label{font-size:11px;color:#7888a8;font-weight:bold;letter-spacing:1.5px;margin:14px 12px 8px}.navbtn{width:100%;display:flex;gap:11px;align-items:center;text-align:left;padding:12px;border:0;border-radius:10px;color:#cbd6ed;background:transparent;margin:3px 0}.navbtn:hover,.navbtn.active{background:linear-gradient(100deg,#123b58,#30205a);color:white}.main{padding:24px;min-width:0}.hero{background:linear-gradient(120deg,#123c5d,#35205f 70%,#111a2e);border:1px solid #355078;border-radius:18px;padding:28px;position:relative;overflow:hidden}.hero:after{content:"💎";position:absolute;right:35px;top:22px;font-size:90px;opacity:.18}.hero h1{margin:0 0 8px;font-size:clamp(25px,4vw,40px)}.hero p{color:#d6e6ff;max-width:650px;line-height:1.5}.primary,.secondary,.danger{border:0;border-radius:10px;padding:11px 16px;font-weight:bold}.primary{background:linear-gradient(100deg,var(--cyan),#6974ff);color:#06101d}.secondary{background:var(--panel2);border:1px solid var(--line);color:var(--text)}.danger{background:#552337;color:white}.section{display:none}.section.active{display:block}.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:24px 0 14px}.section-head h2{margin:0}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}.card{background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:15px;padding:17px;min-width:0}.game-card{min-height:150px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(145deg,#1a3153,#17152e)}.game-emoji{font-size:36px}.card h3{margin:10px 0 6px}.tag{display:inline-block;border:1px solid #35607d;color:#9feeff;border-radius:20px;padding:4px 9px;font-size:12px}.package{display:flex;flex-direction:column;gap:10px}.price{font-size:21px;font-weight:900;color:var(--cyan)}.field{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;background:#0b1426;color:var(--text);margin:6px 0 13px}.form{max-width:560px}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.balance{font-size:36px;font-weight:900;color:var(--good)}.notice{padding:12px 14px;border-radius:10px;background:#302817;border:1px solid #66512a;color:#ffe3a1;line-height:1.45;margin:14px 0}.table-wrap{overflow-x:auto}.table{width:100%;border-collapse:collapse;min-width:520px}.table th,.table td{padding:12px;text-align:left;border-bottom:1px solid var(--line)}.empty{padding:30px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:12px}.mobile-nav{display:none}.footer{padding:28px 0;color:#7f8ba4;font-size:13px;text-align:center}
 body.light{--bg:#eef3fb;--panel:#fff;--panel2:#e3eaf6;--text:#10182a;--muted:#56647b;--line:#cbd5e5;background:#eef3fb;color:var(--text)}body.light .topbar,body.light .sidebar{background:#f8fbff}body.light .field{background:#fff;color:#111}
 @media(max-width:760px){.layout{display:block}.sidebar{display:none}.main{padding:14px}.topbar{padding:10px 14px}.hero{padding:22px 18px}.hero:after{right:10px;font-size:65px}.mobile-nav{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:30;background:#0a1122;border-top:1px solid var(--line);justify-content:space-around;padding:7px 3px calc(7px + env(safe-area-inset-bottom))}.mobile-nav button{background:none;border:0;color:#cbd6ed;font-size:11px;display:flex;flex-direction:column;gap:3px;align-items:center}.mobile-nav span{font-size:19px}.main{padding-bottom:85px}.row{grid-template-columns:1fr}.section-head{align-items:flex-start;flex-direction:column}}
+
+/* NEXUS DIAMONDS — portada visual renovada */
+:root{--cyan:#39ff88;--purple:#00c978;--good:#39ff88;--line:#164b37}
+body{background:radial-gradient(ellipse at 50% -10%,#123d2a 0,#080d12 48%);color:#f4fff8}
+.topbar{background:#070d0bee;border-bottom:1px solid #174d37}
+.brand span{color:#39ff88}
+.iconbtn,.secondary{border-color:#20583f}
+.brand-banner{display:none}
+.hero{min-height:310px;padding:30px;border:1px solid #238451;background:linear-gradient(90deg,rgba(3,14,10,.94),rgba(4,25,16,.62)),url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1600&q=85') center/cover;border-radius:22px;box-shadow:0 0 28px #00e67620}
+.hero:after{content:"";display:none}
+.hero h1{max-width:620px;font-size:clamp(30px,5vw,48px);text-shadow:0 3px 18px #000}
+.hero p{max-width:540px;color:#e0ffeb}
+.hero .tag{background:#063b25;color:#9dffc2;border-color:#1e9e5b}
+.primary{background:linear-gradient(100deg,#39ff88,#00bd75);color:#03150b;box-shadow:0 5px 18px #00e67625}
+.section-head h2{border-left:5px solid #39ff88;padding-left:12px}
+.card{background:linear-gradient(155deg,#14251d,#0c1712);border-color:#1d563b;box-shadow:0 8px 24px #0003}
+.game-card{min-height:220px;position:relative;overflow:hidden;justify-content:flex-end;gap:12px;background:#0d1c14}
+.game-card .game-emoji{display:none}
+.game-card:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#06110b 2%,rgba(5,18,10,.15) 100%);z-index:0}
+.game-card>*{position:relative;z-index:1}
+.game-card h3{font-size:20px}
+.game-card:nth-child(1){background-image:url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=900&q=80');background-size:cover;background-position:center}
+.game-card:nth-child(2){background-image:url('https://images.unsplash.com/photo-1587573089734-09cb69c0f2c5?auto=format&fit=crop&w=900&q=80');background-size:cover;background-position:center}
+.game-card:nth-child(3){background-image:url('https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=900&q=80');background-size:cover;background-position:center}
+.game-card:nth-child(4){background-image:url('https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=900&q=80');background-size:cover;background-position:center}
+.package{border-color:#20583f}
+.price{color:#39ff88}
+.notice{background:#302817;border-color:#78612a}
+.mobile-nav{background:#07100b;border-top:1px solid #1b5138}
+.mobile-nav button{color:#d7f7e3}
+.navbtn:hover,.navbtn.active{background:linear-gradient(100deg,#07532f,#123c29);color:#fff}
+@media(max-width:760px){.hero{min-height:280px;padding:23px 18px}.game-card{min-height:190px}.main{padding-bottom:100px}}
+
 </style>
 </head>
 <body>
@@ -40,17 +73,23 @@ body.light{--bg:#eef3fb;--panel:#fff;--panel2:#e3eaf6;--text:#10182a;--muted:#56
 <main class="main">
 <section id="home" class="section active">
   <div class="hero">
-    <span class="tag">TU TIENDA GAMER</span>
-    <h1>Bienvenido a NEXUS DIAMONDS</h1>
-    <p>Recargas de juegos, ofertas y productos digitales en un solo lugar. Elige tu juego favorito y descubre los paquetes disponibles.</p>
-    <button class="primary" onclick="showSection('games')">Explorar juegos</button>
+    <span class="tag">💚 TU TIENDA GAMER</span>
+    <h1>Recarga tus juegos favoritos en NEXUS DIAMONDS</h1>
+    <p>Diamantes, ofertas y productos digitales en un solo lugar. Explora el catálogo y encuentra tu próxima recarga.</p>
+    <button class="primary" onclick="showSection('games')">🎮 Explorar juegos</button>
   </div>
-  <div class="section-head"><h2>🔥 Juegos populares</h2><span class="muted">Catálogo</span></div>
+  <div class="section-head"><h2>🔥 Populares</h2><span class="muted">Descubre el catálogo</span></div>
   <div class="grid">
-    <article class="card game-card"><div class="game-emoji">🔥</div><div><h3>Free Fire</h3><span class="tag">Diamantes y membresías</span></div><button class="primary" onclick="selectGame('Free Fire')">Ver paquetes</button></article>
-    <article class="card game-card"><div class="game-emoji">🎯</div><div><h3>PUBG Mobile</h3><span class="tag">Próximamente</span></div><button class="secondary" onclick="comingSoon()">Ver detalles</button></article>
-    <article class="card game-card"><div class="game-emoji">⚔️</div><div><h3>Call of Duty</h3><span class="tag">Próximamente</span></div><button class="secondary" onclick="comingSoon()">Ver detalles</button></article>
-    <article class="card game-card"><div class="game-emoji">🌟</div><div><h3>Mobile Legends</h3><span class="tag">Próximamente</span></div><button class="secondary" onclick="comingSoon()">Ver detalles</button></article>
+    <article class="card game-card"><div><h3>Free Fire</h3><span class="tag">💎 Diamantes y membresías</span></div><button class="primary" onclick="selectGame('Free Fire')">Ver paquetes</button></article>
+    <article class="card game-card"><div><h3>PUBG Mobile</h3><span class="tag">Gift cards y recargas</span></div><button class="secondary" onclick="comingSoon()">Ver detalles</button></article>
+    <article class="card game-card"><div><h3>Call of Duty</h3><span class="tag">Puntos y contenido</span></div><button class="secondary" onclick="comingSoon()">Ver detalles</button></article>
+    <article class="card game-card"><div><h3>Mobile Legends</h3><span class="tag">Diamantes</span></div><button class="secondary" onclick="comingSoon()">Ver detalles</button></article>
+  </div>
+  <div class="section-head"><h2>✨ Recomendados</h2><span class="muted">Muy pronto más ofertas</span></div>
+  <div class="grid">
+    <article class="card"><div class="game-emoji">💎</div><h3>Recargas Free Fire</h3><p class="muted">Consulta los paquetes disponibles y prepara tu ID de jugador.</p><button class="primary" onclick="selectGame('Free Fire')">Ver recargas</button></article>
+    <article class="card"><div class="game-emoji">🎁</div><h3>Tarjetas regalo</h3><p class="muted">Nuevos productos digitales se añadirán próximamente.</p><button class="secondary" onclick="comingSoon()">Próximamente</button></article>
+    <article class="card"><div class="game-emoji">⚡</div><h3>Ofertas especiales</h3><p class="muted">Mantente atento a las próximas promociones de NEXUS.</p><button class="secondary" onclick="comingSoon()">Ver ofertas</button></article>
   </div>
 </section>
 
@@ -90,29 +129,9 @@ body.light{--bg:#eef3fb;--panel:#fff;--panel2:#e3eaf6;--text:#10182a;--muted:#56
   </div>
 </section>
 
-<section id="account" class="section">
-  <div class="section-head">
-    <h2>👤 Mi cuenta</h2>
-  </div>
-
-  <div class="card form">
-    <h3>Crear una cuenta</h3>
-
-    <label>Nombre</label>
-    <input class="field" id="customerName" placeholder="Tu nombre">
-
-    <label>Correo electrónico</label>
-    <input class="field" id="customerEmail" type="email" placeholder="Tu correo">
-
-    <label>Contraseña</label>
-    <input class="field" id="customerPassword" type="password" placeholder="Mínimo 8 caracteres">
-
-    <button class="primary" onclick="registerCustomer()">
-      Registrarme
-    </button>
-
-    <p id="profileMessage" class="muted"></p>
-  </div>
+<section id="orders" class="section">
+  <div class="section-head"><h2>📦 Mis pedidos</h2></div>
+  <div id="ordersList" class="empty">Todavía no tienes pedidos de demostración.</div>
 </section>
 
 <section id="account" class="section">
@@ -196,49 +215,9 @@ function renderOrders(){
  el.className='card table-wrap';el.innerHTML='<table class="table"><thead><tr><th>Tipo</th><th>Detalle</th><th>Fecha</th><th>Estado</th></tr></thead><tbody>'+items.map(o=>'<tr><td>'+escapeHtml(o.type)+'</td><td>'+escapeHtml(o.name)+'<br><small>'+escapeHtml(o.detail)+'</small></td><td>'+escapeHtml(o.date)+'</td><td>'+escapeHtml(o.status)+'</td></tr>').join('')+'</tbody></table>';
 }
 function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-async function registerCustomer(){
- const name=document.getElementById('customerName').value.trim();
- const email=document.getElementById('customerEmail').value.trim();
- const password=document.getElementById('customerPassword').value;
-
- const message=document.getElementById('profileMessage');
-
- if(!name || !email || !password){
-   message.textContent='Completa todos los campos.';
-   return;
- }
-
- if(password.length<8){
-   message.textContent='La contraseña debe tener al menos 8 caracteres.';
-   return;
- }
-
- message.textContent='Creando tu cuenta...';
-
- try{
-   const response=await fetch('https://nexus-diamonds-api.yuniorrodriguezromero-2007.workers.dev/api/register',{
-     method:'POST',
-     headers:{'Content-Type':'application/json'},
-     body:JSON.stringify({name,email,password})
-   });
-
-   const result=await response.json();
-   message.textContent=result.message || 'Respuesta recibida del servidor.';
- }catch(error){
-   message.textContent='No se pudo conectar con el servidor.';
- }
-    }
-function renderPackages(){
- document.getElementById('packages').innerHTML=demoPackages.map(p=>'<article class="card package"><div class="game-emoji">💎</div><h3>'+p.name+'</h3><div class="price">'+p.price+'</div><button class="primary" onclick="addDemoOrder(\''+p.name+'\')">Seleccionar</button></article>').join('');
+function saveProfile(){
+ localStorage.setItem('nexusDemoProfile',JSON.stringify({name:document.getElementById('customerName').value,email:document.getElementById('customerEmail').value}));
+ document.getElementById('profileMessage').textContent='Datos guardados solo en este dispositivo; todavía no existe una cuenta real.';
 }
-window.addEventListener('DOMContentLoaded',()=>{
- renderPackages();renderBalance();renderOrders();
- if(localStorage.getItem('nexusDemoTheme')==='light')document.body.classList.add('light');
- const profile=JSON.parse(localStorage.getItem('nexusDemoProfile')||'{}');
- document.getElementById('customerName').value=profile.name||'';
- document.getElementById('customerEmail').value=profile.email||'';
-});
-</script>
-</body>
- </html>
- 
+function renderPackages(){
+ document.getElementById('packages').innerHTML=demoPackages.map(p=>'<article class="card package"><div class="game-emoji">💎</div><h3>'+p.name+'</h3><div class="price">'+p
