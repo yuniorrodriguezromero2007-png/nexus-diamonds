@@ -27,6 +27,14 @@ label{font-size:14px;color:var(--muted)}.small{font-size:12px}.listitem{padding:
 footer{text-align:center;color:var(--muted);padding:30px 10px}
 #toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#17314b;padding:13px 18px;border:1px solid #3d7298;border-radius:12px;display:none;z-index:30;max-width:90%}
 @media(max-width:600px){header{align-items:flex-start;gap:8px;flex-direction:column}nav{width:100%}nav button{flex:1}.hero{padding:18px}.hero:after{right:-15px;font-size:85px}}
+
+.game{padding:0;overflow:hidden;min-height:205px;border:1px solid #2c5c87;background:#09172a;position:relative}
+.game-art{min-height:205px;background-size:cover;background-position:center;position:relative;display:flex;align-items:flex-end}
+.game-art:before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 15%,rgba(4,13,28,.18) 40%,rgba(4,13,28,.92) 72%,rgba(4,13,28,.98))}
+.game-info{position:relative;z-index:1;margin-left:auto;width:55%;padding:16px 14px;text-align:right}
+.game-info h3{font-size:20px;margin:0 0 6px;text-shadow:0 2px 8px #000}
+.game-info p{font-size:12px;color:#c2d8ee;margin:0 0 12px}
+.game-info button{padding:10px 12px;font-size:13px;box-shadow:0 0 14px #00aaff55}
 </style>
 </head>
 <body>
@@ -53,8 +61,10 @@ let data=JSON.parse(localStorage.getItem("nexusData")||'{"balance":0,"orders":[]
 function save(){localStorage.setItem("nexusData",JSON.stringify(data));render()}
 function toast(t){let e=document.getElementById("toast");e.textContent=t;e.style.display="block";setTimeout(()=>e.style.display="none",2600)}
 function showPage(id){document.querySelectorAll("section.page").forEach(s=>s.classList.remove("active"));document.getElementById(id).classList.add("active");if(id==="orders")renderOrders();if(id==="wallet")document.getElementById("balance").textContent=data.balance;if(id==="admin")adminTab("orders");window.scrollTo(0,0)}
-function gameCards(){return games.map((g,i)=>`<div class="card game"><div><div class="gameicon">${g.icon}</div><h3>${g.name}</h3><p class="muted">${g.packages.length} paquetes disponibles</p></div><button onclick="openShop(${i})">Ver recargas</button></div>`).join("")}
-function render(){document.getElementById("homeGames").innerHTML=gameCards();document.getElementById("gamesGrid").innerHTML=gameCards();document.getElementById("balance").textContent=data.balance;renderOrders()}
+function gameCards(){return games.map((g,i)=>{
+const art=['free_fire.jpg','pubg_mobile.jpg','mobile_legends.jpg','call_of_duty_mobile.jpg'][i]||'free_fire.jpg';
+return `<div class="card game"><div class="game-art" style="background-image:url('${art}')"><div class="game-info"><h3>${g.name}</h3><p>Paquetes disponibles: ${g.packages.length}</p><button onclick="openShop(${i})">Ver recargas</button></div></div></div>`
+}).join("")}
 function openShop(i){let g=games[i];document.getElementById("shopTitle").textContent="Recargas · "+g.name;document.getElementById("packages").innerHTML=g.packages.map(p=>`<div class="card"><h3>${p[0]}</h3><p class="price">${p[1]} unidades</p><button onclick="choosePackage('${p[0]}',${p[1]})">Seleccionar</button></div>`).join("");showPage("shop")}
 function choosePackage(n,p){document.getElementById("selectedPackage").value=n;document.getElementById("selectedPrice").value=p;toast("Paquete seleccionado")}
 function createOrder(){let id=document.getElementById("playerId").value.trim(),pkg=document.getElementById("selectedPackage").value,price=document.getElementById("selectedPrice").value;if(!id||!pkg){toast("Escribe tu ID y selecciona un paquete");return}data.orders.unshift({id:Date.now(),player:id,package:pkg,price,status:"Pendiente",date:new Date().toLocaleString()});save();toast("Pedido guardado localmente");showPage("orders")}
