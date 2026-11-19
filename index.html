@@ -3,181 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#080d1b">
 <title>NEXUS DIAMONDS</title>
 <style>
-:root{--bg:#080d1b;--panel:#111a2e;--panel2:#17233d;--text:#f4f7ff;--muted:#aab6ce;--cyan:#00d9ff;--purple:#8a4dff;--line:#273653;--good:#39d98a}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top right,#17264b 0,#080d1b 42%);color:var(--text);font-family:Arial,sans-serif;min-height:100vh}
-button,input,select{font:inherit}button{cursor:pointer}.topbar{position:sticky;top:0;z-index:20;background:#0a1122ee;backdrop-filter:blur(12px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:12px 4%;gap:12px}
-.brand{font-size:20px;font-weight:900;letter-spacing:1px}.account-btn{font-size:11px;padding:5px 7px;border-radius:7px;line-height:1.1;white-space:nowrap}.brand span{color:var(--cyan)}.top-actions{display:flex;gap:8px;align-items:center}.iconbtn,.menu-btn{background:var(--panel2);border:1px solid var(--line);color:var(--text);border-radius:8px;padding:4px 6px;font-size:11px;line-height:1;min-width:27px;min-height:26px}
-.brand-banner{max-width:1200px;margin:14px auto 0;padding:0 14px}.brand-banner img{display:block;width:100%;height:auto;max-height:190px;object-fit:contain;border-radius:14px}.layout{display:grid;grid-template-columns:230px minmax(0,1fr);max-width:1400px;margin:auto;min-height:calc(100vh - 60px)}
-.sidebar{padding:22px 14px;border-right:1px solid var(--line);background:#0c1426}.nav-label{font-size:11px;color:#7888a8;font-weight:bold;letter-spacing:1.5px;margin:14px 12px 8px}.navbtn{width:100%;display:flex;gap:11px;align-items:center;text-align:left;padding:12px;border:0;border-radius:10px;color:#cbd6ed;background:transparent;margin:3px 0}.navbtn:hover,.navbtn.active{background:linear-gradient(100deg,#123b58,#30205a);color:white}.main{padding:24px;min-width:0}.hero{background:linear-gradient(120deg,#123c5d,#35205f 70%,#111a2e);border:1px solid #355078;border-radius:18px;padding:28px;position:relative;overflow:hidden}.hero:after{content:"💎";position:absolute;right:35px;top:22px;font-size:90px;opacity:.18}.hero h1{margin:0 0 8px;font-size:clamp(25px,4vw,40px)}.hero p{color:#d6e6ff;max-width:650px;line-height:1.5}.primary,.secondary,.danger{border:0;border-radius:10px;padding:11px 16px;font-weight:bold}.primary{background:linear-gradient(100deg,var(--cyan),#6974ff);color:#06101d}.secondary{background:var(--panel2);border:1px solid var(--line);color:var(--text)}.danger{background:#552337;color:white}.section{display:none}.section.active{display:block}.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:24px 0 14px}.section-head h2{margin:0}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}.card{background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:15px;padding:17px;min-width:0}.game-card{min-height:150px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(145deg,#1a3153,#17152e)}.game-emoji{font-size:36px}.card h3{margin:10px 0 6px}.tag{display:inline-block;border:1px solid #35607d;color:#9feeff;border-radius:20px;padding:4px 9px;font-size:12px}.package{display:flex;flex-direction:column;gap:10px}.price{font-size:21px;font-weight:900;color:var(--cyan)}.field{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;background:#0b1426;color:var(--text);margin:6px 0 13px}.form{max-width:560px}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.balance{font-size:36px;font-weight:900;color:var(--good)}.notice{padding:12px 14px;border-radius:10px;background:#302817;border:1px solid #66512a;color:#ffe3a1;line-height:1.45;margin:14px 0}.table-wrap{overflow-x:auto}.table{width:100%;border-collapse:collapse;min-width:520px}.table th,.table td{padding:12px;text-align:left;border-bottom:1px solid var(--line)}.empty{padding:30px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:12px}.mobile-nav{display:none}.footer{padding:28px 0;color:#7f8ba4;font-size:13px;text-align:center}
-body.light{--bg:#eef3fb;--panel:#fff;--panel2:#e3eaf6;--text:#10182a;--muted:#56647b;--line:#cbd5e5;background:#eef3fb;color:var(--text)}body.light .topbar,body.light .sidebar{background:#f8fbff}body.light .field{background:#fff;color:#111}
-@media(max-width:760px){.layout{display:block}.sidebar{display:none}.main{padding:14px}.topbar{padding:10px 14px}.hero{padding:22px 18px}.hero:after{right:10px;font-size:65px}.mobile-nav{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:30;background:#0a1122;border-top:1px solid var(--line);justify-content:space-around;padding:7px 3px calc(7px + env(safe-area-inset-bottom))}.mobile-nav button{background:none;border:0;color:#cbd6ed;font-size:11px;display:flex;flex-direction:column;gap:3px;align-items:center}.mobile-nav span{font-size:19px}.main{padding-bottom:85px}.row{grid-template-columns:1fr}.section-head{align-items:flex-start;flex-direction:column}}
-
-/* NEXUS DIAMONDS — portada visual renovada */
-:root{--cyan:#39ff88;--purple:#00c978;--good:#39ff88;--line:#164b37}
-body{background:radial-gradient(ellipse at 50% -10%,#123d2a 0,#080d12 48%);color:#f4fff8}
-.topbar{background:#070d0bee;border-bottom:1px solid #174d37}
-.brand span{color:#39ff88}
-.iconbtn,.secondary{border-color:#20583f}
-.brand-banner{display:none}
-.hero{min-height:310px;padding:30px;border:1px solid #238451;background:linear-gradient(90deg,rgba(3,14,10,.94),rgba(4,25,16,.62)),url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1600&q=85') center/cover;border-radius:22px;box-shadow:0 0 28px #00e67620}
-.hero:after{content:"";display:none}
-.hero h1{max-width:620px;font-size:clamp(30px,5vw,48px);text-shadow:0 3px 18px #000}
-.hero p{max-width:540px;color:#e0ffeb}
-.hero .tag{background:#063b25;color:#9dffc2;border-color:#1e9e5b}
-.primary{background:linear-gradient(100deg,#39ff88,#00bd75);color:#03150b;box-shadow:0 5px 18px #00e67625}
-.section-head h2{border-left:5px solid #39ff88;padding-left:12px}
-.card{background:linear-gradient(155deg,#14251d,#0c1712);border-color:#1d563b;box-shadow:0 8px 24px #0003}
-.game-card{min-height:220px;position:relative;overflow:hidden;justify-content:flex-end;gap:12px;background:#0d1c14}
-.game-card .game-emoji{display:none}
-.game-card:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#06110b 2%,rgba(5,18,10,.15) 100%);z-index:0}
-.game-card>*{position:relative;z-index:1}
-.game-card h3{font-size:20px}
-.game-card:nth-child(1){background-image:url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=900&q=80');background-size:cover;background-position:center}
-.game-card:nth-child(2){background-image:url('https://images.unsplash.com/photo-1587573089734-09cb69c0f2c5?auto=format&fit=crop&w=900&q=80');background-size:cover;background-position:center}
-.game-card:nth-child(3){background-image:url('https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=900&q=80');background-size:cover;background-position:center}
-.game-card:nth-child(4){background-image:url('https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=900&q=80');background-size:cover;background-position:center}
-.package{border-color:#20583f}
-.price{color:#39ff88}
-.notice{background:#302817;border-color:#78612a}
-.mobile-nav{background:#07100b;border-top:1px solid #1b5138}
-.mobile-nav button{color:#d7f7e3}
-.navbtn:hover,.navbtn.active{background:linear-gradient(100deg,#07532f,#123c29);color:#fff}
-@media(max-width:760px){.hero{min-height:280px;padding:23px 18px}.game-card{min-height:190px}.main{padding-bottom:100px}}
-
-.iconbtn{font-size:10px;min-width:25px;min-height:24px;padding:3px 5px}.account-btn{font-size:10px;padding:4px 6px}
+:root{--bg:#07120d;--card:#101f17;--card2:#172b20;--text:#effff4;--muted:#9db8a6;--line:#2b4937;--green:#35ef88;--green2:#16b96a;--red:#ff5e72;--yellow:#ffd166}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(160deg,#102d1e 0,#07120d 42%,#07120d);color:var(--text);font:16px system-ui,Arial,sans-serif;min-height:100vh}body.light{--bg:#f0faf3;--card:#fff;--card2:#e7f4eb;--text:#10281a;--muted:#55705f;--line:#c8dfd0;background:#f1faf4;color:var(--text)}
+header{position:sticky;top:0;z-index:10;background:rgba(7,18,13,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}body.light header{background:rgba(255,255,255,.94)}.top{max-width:1100px;margin:auto;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px}.logo{font-size:20px;font-weight:950;letter-spacing:1px}.logo span{color:var(--green)}.top-actions{display:flex;gap:7px}
+main{max-width:1100px;margin:auto;padding:16px}.nav{display:flex;gap:7px;overflow:auto;padding:5px 0 16px}.nav button{white-space:nowrap}
+button{border:0;border-radius:12px;padding:11px 14px;font-weight:800;background:var(--green);color:#062012;cursor:pointer;transition:.15s}button:hover{filter:brightness(1.08);transform:translateY(-1px)}button:disabled{opacity:.5;cursor:not-allowed;transform:none}button.secondary{background:var(--card2);border:1px solid var(--line);color:var(--text)}button.danger{background:var(--red);color:#fff}button.small{padding:8px 10px;font-size:13px}
+.view{display:none}.view.active{display:block}.hero{border:1px solid #2a704a;border-radius:22px;padding:26px;background:linear-gradient(125deg,#124328,#0b1a11);margin-bottom:16px}.hero h1{font-size:clamp(27px,5vw,43px);line-height:1.1;margin:10px 0}.hero p{color:#c6e8d2}.tag{display:inline-block;border:1px solid #2d8051;background:#163e29;color:#9bffc5;padding:5px 9px;border-radius:999px;font-size:12px;font-weight:800}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:13px}.card{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:17px}.card h3{margin:0 0 7px}.muted{color:var(--muted)}.price{color:var(--green);font-weight:900;font-size:21px;margin:10px 0}.notice{border:1px solid var(--line);background:var(--card2);padding:12px;border-radius:12px;color:var(--muted);margin:12px 0}.badge{display:inline-block;border-radius:999px;padding:4px 8px;background:var(--card2);border:1px solid var(--line);font-size:12px}
+form{display:grid;gap:11px;max-width:550px}label{display:grid;gap:5px;color:var(--muted);font-size:14px}input,select,textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:11px;background:var(--card2);color:var(--text);font:inherit}textarea{min-height:80px;resize:vertical}.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.balance{font-size:35px;font-weight:950;color:var(--green)}.table-scroll{overflow:auto}table{width:100%;border-collapse:collapse;min-width:500px}td,th{text-align:left;padding:10px;border-bottom:1px solid var(--line)}.empty{color:var(--muted);padding:10px 0}footer{text-align:center;color:var(--muted);padding:28px 12px}
 </style>
 </head>
 <body>
-<header class="topbar">
-  <div class="brand">NEXUS <span>DIAMONDS</span></div>
-  <div class="top-actions">
-    <button class="iconbtn" onclick="toggleTheme()" aria-label="Cambiar tema">☀️/🌙</button>
-    <button class="secondary account-btn" onclick="showSection('account')">👤 Mi cuenta</button>
-  </div>
-</header>
-<div class="brand-banner"><img src="file_00000000c8e881f699f6db3eec7cf4c7.png" alt="NEXUS DIAMONDS"></div>
-<div class="layout">
-<aside class="sidebar">
-  <div class="nav-label">MENÚ PRINCIPAL</div>
-  <button class="navbtn active" data-section="home" onclick="showSection('home')">🏠 Inicio</button>
-  <button class="navbtn" data-section="games" onclick="showSection('games')">🎮 Juegos</button>
-  <button class="navbtn" data-section="recharge" onclick="showSection('recharge')">💎 Recargar</button>
-  <button class="navbtn" data-section="wallet" onclick="showSection('wallet')">💰 Agregar saldo</button>
-  <button class="navbtn" data-section="orders" onclick="showSection('orders')">📦 Mis pedidos</button>
-  <button class="navbtn" data-section="account" onclick="showSection('account')">👤 Mi cuenta</button>
-  <button class="navbtn" data-section="support" onclick="showSection('support')">📞 Soporte</button>
-  <div class="notice">Panel en preparación: depósitos y pedidos requerirán conexión al servidor.</div>
-</aside>
-<main class="main">
-<section id="home" class="section active">
-  <div class="hero">
-    <span class="tag">💚 TU TIENDA GAMER</span>
-    <h1>Recarga tus juegos favoritos en NEXUS DIAMONDS</h1>
-    <p>Diamantes, ofertas y productos digitales en un solo lugar. Explora el catálogo y encuentra tu próxima recarga.</p>
-    <button class="primary" onclick="showSection('games')">🎮 Explorar juegos</button>
-  </div>
-  <div class="section-head"><h2>🔥 Populares</h2><span class="muted">Descubre el catálogo</span></div>
-  <div class="grid">
-    <article class="card game-card"><div><h3>Free Fire</h3><span class="tag">💎 Diamantes y membresías</span></div><button class="primary" onclick="selectGame('Free Fire')">Ver paquetes</button></article>
-    <article class="card game-card"><div><h3>PUBG Mobile</h3><span class="tag">Gift cards y recargas</span></div><button class="secondary" onclick="comingSoon()">Ver detalles</button></article>
-    <article class="card game-card"><div><h3>Call of Duty</h3><span class="tag">Puntos y contenido</span></div><button class="secondary" onclick="comingSoon()">Ver detalles</button></article>
-    <article class="card game-card"><div><h3>Mobile Legends</h3><span class="tag">Diamantes</span></div><button class="secondary" onclick="comingSoon()">Ver detalles</button></article>
-  </div>
-  <div class="section-head"><h2>✨ Recomendados</h2><span class="muted">Muy pronto más ofertas</span></div>
-  <div class="grid">
-    <article class="card"><div class="game-emoji">💎</div><h3>Recargas Free Fire</h3><p class="muted">Consulta los paquetes disponibles y prepara tu ID de jugador.</p><button class="primary" onclick="selectGame('Free Fire')">Ver recargas</button></article>
-    <article class="card"><div class="game-emoji">🎁</div><h3>Tarjetas regalo</h3><p class="muted">Nuevos productos digitales se añadirán próximamente.</p><button class="secondary" onclick="comingSoon()">Próximamente</button></article>
-    <article class="card"><div class="game-emoji">⚡</div><h3>Ofertas especiales</h3><p class="muted">Mantente atento a las próximas promociones de NEXUS.</p><button class="secondary" onclick="comingSoon()">Ver ofertas</button></article>
-  </div>
-</section>
-
-<section id="games" class="section">
-  <div class="section-head"><h2>🎮 Catálogo de juegos</h2></div>
-  <div class="grid">
-    <article class="card game-card"><div class="game-emoji">🔥</div><div><h3>Free Fire LATAM</h3><p class="muted">Recargas por ID de jugador.</p></div><button class="primary" onclick="selectGame('Free Fire')">Seleccionar</button></article>
-    <article class="card game-card"><div class="game-emoji">🎯</div><div><h3>PUBG Mobile</h3><p class="muted">Catálogo próximamente.</p></div><button class="secondary" onclick="comingSoon()">Próximamente</button></article>
-    <article class="card game-card"><div class="game-emoji">⚔️</div><div><h3>Call of Duty</h3><p class="muted">Catálogo próximamente.</p></div><button class="secondary" onclick="comingSoon()">Próximamente</button></article>
-    <article class="card game-card"><div class="game-emoji">🌟</div><div><h3>Mobile Legends</h3><p class="muted">Catálogo próximamente.</p></div><button class="secondary" onclick="comingSoon()">Próximamente</button></article>
-  </div>
-</section>
-
-<section id="recharge" class="section">
-  <div class="section-head"><h2>💎 Recargas Free Fire</h2><span class="tag">Servidor LATAM</span></div>
-  <div class="notice">Los paquetes y precios deben ser configurados por el administrador. Las solicitudes se habilitarán al conectar el servidor.</div>
-  <div class="form card">
-    <label for="playerId">ID del jugador</label><input class="field" id="playerId" placeholder="Escribe tu ID de Free Fire">
-    <label for="region">Región</label><select class="field" id="region"><option>LATAM</option></select>
-  </div>
-  <div class="section-head"><h2>Selecciona un paquete</h2></div>
-  <div class="grid" id="packages"></div>
-</section>
-
-<section id="wallet" class="section">
-  <div class="section-head"><h2>💰 Mi billetera</h2></div>
-  <div class="card form">
-    <p class="muted">Saldo de cuenta (se mostrará al conectar el servidor)</p>
-    <div class="balance" id="balance">$0.00</div>
-    <div class="notice">Los depósitos se revisarán manualmente por el administrador. No envíes dinero hasta que aparezcan los datos oficiales de pago.</div>
-    <h3>Solicitar depósito</h3>
-    <label>Importe solicitado</label><input class="field" id="depositAmount" type="number" min="1" placeholder="Ej. 500">
-    <label>Método de pago</label><select class="field" id="depositMethod"><option>Transferencia</option><option>Saldo móvil</option><option>USDT</option><option>Otro</option></select>
-    <label>Referencia o nota del pago</label><input class="field" id="depositNote" placeholder="Número de operación (no incluyas datos secretos)">
-    <button class="primary" onclick="requestDeposit()">Solicitar depósito</button>
-    <p id="depositMessage" class="muted"></p>
-  </div>
-</section>
-
-<section id="orders" class="section">
-  <div class="section-head"><h2>📦 Mis pedidos</h2></div>
-  <div id="ordersList" class="empty">Todavía no tienes pedidos.</div>
-</section>
-
-<section id="account" class="section">
-  <div class="section-head"><h2>👤 Mi cuenta</h2></div>
-  <div class="card form">
-    <div class="notice">La cuenta real se activará cuando conectemos el servidor seguro. Esta pantalla permite comprobar la navegación; no guardes contraseñas aquí todavía.</div>
-    <label>Nombre</label><input class="field" id="customerName" placeholder="Tu nombre">
-    <label>Correo electrónico</label><input class="field" id="customerEmail" type="email" placeholder="tucorreo@ejemplo.com">
-    <button class="primary" onclick="saveProfile()">Guardar datos</button>
-    <button class="secondary" onclick="clearProfile()" style="margin-top:8px">Borrar datos guardados</button>
-    <p id="profileMessage" class="muted"></p>
-  </div>
-</section>
-
-<section id="support" class="section">
-  <div class="section-head"><h2>📞 Centro de soporte</h2></div>
-  <div class="card form">
-    <h3>¿Necesitas ayuda?</h3>
-    <p class="muted">Contacta con el equipo de NEXUS DIAMONDS para consultar sobre pedidos o futuras recargas.</p>
-    <p><strong>WhatsApp:</strong> añade aquí tu número oficial antes de publicar la tienda.</p>
-    <button class="secondary" onclick="alert('Configura el enlace oficial de WhatsApp antes de publicar esta opción.')">Contactar soporte</button>
-  </div>
-</section>
-
-<div class="footer">© 2026 NEXUS DIAMONDS · Tienda gamer</div>
-</main>
-</div>
-<nav class="mobile-nav">
-  <button onclick="showSection('home')"><span>🏠</span>Inicio</button>
-  <button onclick="showSection('games')"><span>🎮</span>Juegos</button>
-  <button onclick="showSection('recharge')"><span>💎</span>Recargar</button>
-  <button onclick="showSection('wallet')"><span>💰</span>Saldo</button>
-  <button onclick="showSection('account')"><span>👤</span>Cuenta</button>
+<header><div class="top"><div class="logo">NEXUS <span>DIAMONDS</span></div><div class="top-actions"><button class="secondary small" onclick="toggleTheme()">☀️ / 🌙</button><button class="secondary small" onclick="navigate('account')">Mi cuenta</button></div></div></header>
+<main>
+<nav class="nav">
+<button class="secondary" onclick="navigate('home')">Inicio</button><button class="secondary" onclick="navigate('games')">Juegos</button><button class="secondary" onclick="navigate('shop')">Recargas</button><button class="secondary" onclick="navigate('wallet')">Billetera</button><button class="secondary" onclick="navigate('orders')">Pedidos</button><button class="secondary" onclick="navigate('account')">Cuenta</button><button class="secondary" onclick="navigate('support')">Soporte</button><button class="secondary" onclick="navigate('admin')">Admin</button>
 </nav>
+
+<section class="view active" id="home">
+<div class="hero"><span class="tag">TIENDA GAMER</span><h1>Recarga. Juega. Domina.</h1><p>Bienvenido a NEXUS DIAMONDS. Selecciona un juego y explora los paquetes.</p><div class="row"><button onclick="navigate('games')">Ver juegos</button><button class="secondary" onclick="navigate('shop')">Comprar diamantes</button></div></div>
+<div class="grid"><div class="card"><h3>💎 Recargas</h3><p class="muted">Explora los paquetes disponibles.</p><button onclick="navigate('shop')">Ver paquetes</button></div><div class="card"><h3>💰 Billetera</h3><p class="muted">Consulta el saldo de prueba.</p><button onclick="navigate('wallet')">Abrir billetera</button></div><div class="card"><h3>📦 Pedidos</h3><p class="muted">Consulta solicitudes guardadas.</p><button onclick="navigate('orders')">Ver historial</button></div></div>
+</section>
+
+<section class="view" id="games"><h2>🎮 Juegos</h2><div class="grid"><div class="card"><h3>Free Fire</h3><p class="muted">Diamantes y membresías</p><button onclick="selectGame('Free Fire')">Seleccionar</button></div><div class="card"><h3>Otros juegos</h3><p class="muted">Se añadirán en futuras etapas.</p><button class="secondary" onclick="notify('Este juego todavía no está disponible.')">Próximamente</button></div></div></section>
+
+<section class="view" id="shop"><h2>💎 Recargas Free Fire</h2><div class="notice">Modo de desarrollo: los precios están pendientes de configurar. Las solicitudes no se envían a un servidor ni realizan recargas reales.</div><div class="grid" id="productGrid"></div><div class="card" style="margin-top:15px"><h3>Solicitar paquete</h3><form id="orderForm" onsubmit="createOrder(event)"><label>ID de jugador<input id="playerId" required inputmode="numeric" placeholder="Tu ID de Free Fire"></label><label>Paquete<select id="productChoice" required></select></label><label>Forma de pago<select id="paymentMethod"><option>Transferencia</option><option>USDT</option><option>PayPal</option><option>Saldo móvil</option><option>Otro</option></select></label><label>Referencia / nota<textarea id="paymentNote" placeholder="Escribe la referencia si tienes"></textarea></label><button type="submit">Guardar solicitud</button></form></div></section>
+
+<section class="view" id="wallet"><h2>💰 Billetera</h2><div class="card"><p class="muted">Saldo de prueba guardado en este navegador</p><div class="balance" id="balanceValue">$0.00</div><div class="row"><button onclick="navigate('deposit')">Solicitar depósito</button><button class="secondary" onclick="refresh()">Actualizar</button></div></div><div class="notice">El saldo de prueba no representa dinero real.</div></section>
+
+<section class="view" id="deposit"><h2>📥 Solicitar depósito</h2><div class="notice">Formulario de prueba. No confirma ni procesa pagos.</div><form onsubmit="createDeposit(event)"><label>Importe<input id="depositAmount" type="number" min="0.01" step="0.01" required></label><label>Moneda<select id="depositCurrency"><option>CUP</option><option>USD</option><option>USDT</option></select></label><label>Método<select id="depositMethod"><option>Transferencia</option><option>USDT</option><option>PayPal</option><option>Saldo móvil</option></select></label><label>Referencia<textarea id="depositReference"></textarea></label><button>Guardar solicitud</button><button type="button" class="secondary" onclick="navigate('wallet')">Cancelar</button></form></section>
+
+<section class="view" id="orders"><h2>📦 Pedidos</h2><div class="card" id="ordersList"></div><h2 style="margin-top:20px">📥 Depósitos</h2><div class="card" id="depositsList"></div></section>
+
+<section class="view" id="account"><h2>👤 Mi cuenta</h2><div class="card"><form onsubmit="saveProfile(event)"><label>Nombre<input id="accountName" required></label><label>Correo electrónico<input id="accountEmail" type="email"></label><button>Guardar perfil</button><button type="button" class="secondary" onclick="clearProfile()">Limpiar campos</button></form><div class="notice">Perfil local de prueba. Todavía no es un sistema de registro seguro.</div></div></section>
+
+<section class="view" id="support"><h2>🛟 Soporte</h2><div class="card"><form onsubmit="sendSupport(event)"><label>Mensaje<textarea id="supportMessage" required placeholder="¿En qué podemos ayudarte?"></textarea></label><button>Guardar mensaje</button></form><div class="notice">El mensaje se guarda localmente; aún no se envía a un equipo de soporte.</div><div id="supportHistory"></div></div></section>
+
+<section class="view" id="admin"><h2>⚙️ Panel administrativo (prueba)</h2><div class="notice">Este panel es solo local y no tiene protección de administrador. No introduzcas información real.</div><div class="card"><h3>Pedidos</h3><div id="adminOrders"></div><h3 style="margin-top:20px">Depósitos</h3><div id="adminDeposits"></div><div class="row" style="margin-top:20px"><button class="danger" onclick="clearDemo()">Borrar datos de prueba</button></div></div></section>
+<footer>NEXUS DIAMONDS · Prototipo de funcionamiento local</footer>
+</main>
 <script>
-const packages=["110 diamantes","341 diamantes","572 diamantes","1,166 diamantes","2,398 diamantes","6,160 diamantes","Membresía semanal","Membresía mensual"];
-function showSection(id){const target=document.getElementById(id);if(!target){alert('Esta sección aún no está disponible.');return}document.querySelectorAll('.section').forEach(s=>s.classList.toggle('active',s===target));document.querySelectorAll('.navbtn').forEach(b=>b.classList.toggle('active',b.dataset.section===id));window.scrollTo({top:0,behavior:'smooth'});if(id==='orders')renderOrders();if(id==='wallet')renderBalance();}
-function selectGame(name){if(name==='Free Fire'){showSection('recharge')}else{alert(name+' estará disponible próximamente.')}}
-function comingSoon(){alert('Esta función se habilitará cuando conectemos el sistema de la tienda.')}
-function toggleTheme(){document.body.classList.toggle('light');localStorage.setItem('nexusTheme',document.body.classList.contains('light')?'light':'dark')}
-function getData(){try{return JSON.parse(localStorage.getItem('nexusLocalData')||'{"balance":0,"orders":[],"deposits":[]}')}catch(e){return {balance:0,orders:[],deposits:[]}}}
-function saveData(d){localStorage.setItem('nexusLocalData',JSON.stringify(d))}
-function renderBalance(){const b=document.getElementById('balance');if(b)b.textContent='$'+Number(getData().balance).toFixed(2)}
-function requestDeposit(){const amount=Number(document.getElementById('depositAmount').value);if(!Number.isFinite(amount)||amount<=0){alert('Escribe un importe válido.');return}const d=getData();d.deposits.push({amount,method:document.getElementById('depositMethod').value,note:document.getElementById('depositNote').value,date:new Date().toLocaleString(),status:'Pendiente de conexión al servidor'});saveData(d);document.getElementById('depositMessage').textContent='Solicitud guardada en este dispositivo únicamente. No se envió al administrador ni se recibió dinero.';document.getElementById('depositAmount').value='';renderOrders()}
-function addOrder(product){const id=document.getElementById('playerId').value.trim();if(!id){alert('Escribe primero tu ID de jugador.');document.getElementById('playerId').focus();return}const d=getData();d.orders.push({product,id,date:new Date().toLocaleString(),status:'Pendiente de conexión al servidor'});saveData(d);alert('Solicitud guardada localmente. No se cobró ni se entregaron diamantes.');renderOrders();showSection('orders')}
-function renderOrders(){const el=document.getElementById('ordersList');if(!el)return;const d=getData();const rows=[...d.orders.map(o=>({type:'Compra',name:o.product,detail:'ID de jugador: '+o.id,date:o.date,status:o.status})),...d.deposits.map(o=>({type:'Depósito',name:o.amount+' · '+o.method,detail:o.note||'Sin nota',date:o.date,status:o.status}))];if(!rows.length){el.className='empty';el.textContent='Todavía no tienes pedidos.';return}el.className='card table-wrap';el.innerHTML='<table class="table"><thead><tr><th>Tipo</th><th>Detalle</th><th>Fecha</th><th>Estado</th></tr></thead><tbody>'+rows.map(o=>'<tr><td>'+esc(o.type)+'</td><td>'+esc(o.name)+'<br><small>'+esc(o.detail)+'</small></td><td>'+esc(o.date)+'</td><td>'+esc(o.status)+'</td></tr>').join('')+'</tbody></table>'}
-function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function saveProfile(){const name=document.getElementById('customerName').value.trim(),email=document.getElementById('customerEmail').value.trim();localStorage.setItem('nexusLocalProfile',JSON.stringify({name,email}));document.getElementById('profileMessage').textContent='Datos guardados en este dispositivo. Todavía no son una cuenta online.
+const PRODUCTS=["110 diamantes","341 diamantes","572 diamantes","1,166 diamantes","2,398 diamantes","6,160 diamantes","Membresía semanal","Membresía mensual"];
+const KEY="nexusDiamondsPrototype";
+function blankData(){return {balance:0,orders:[],deposits:[],profile:{name:"",email:""},support:[]}}
+function data(){try{return {...blankData(),...JSON.parse(localStorage.getItem(KEY)||"{}")}}catch{return blankData()}}
+function save(d){localStorage.setItem(KEY,JSON.stringify(d))}
+function escapeHTML(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function notify(message){alert(message)}
+function navigate(id){const target=document.getElementById(id);if(!target){notify("La sección no existe.");return}document.querySelectorAll(".view").forEach(v=>v.classList.remove("active"));target.classList.add("active");window.scrollTo({top:0,behavior:"smooth"});refresh()}
+function toggleTheme(){document.body.classList.toggle("light");localStorage.setItem("nexusTheme",document.body.classList.contains("light")?"light":"dark")}
+function selectGame(game){if(game==="Free Fire")navigate("shop");else notify("Este juego estará disponible próximamente.")}
+function refresh(){const d=data();const bal=document.getElementById("balanceValue");if(bal)bal.textContent="$"+Number(d.balance||0).toFixed(2);const orders=document.getElementById("ordersList");if(orders)orders.innerHTML=d.orders.length?d.orders.map(o=>`<p><b>${escapeHTML(o.product)}</b> · ID ${escapeHTML(o.player)}<br>Pago: ${escapeHTML(o.method)} · <span class="badge">${escapeHTML(o.status)}</span><br><small>${escapeHTML(o.date)}</small></p>`).join(""):'<p class="empty">Todavía no tienes pedidos.</p>';const deposits=document.getElementById("depositsList");if(deposits)deposits.innerHTML=d.deposits.length?d.deposits.map(x=>`<p>${escapeHTML(x.amount)} ${escapeHTML(x.currency)} · ${escapeHTML(x.method)} · <span class="badge">${escapeHTML(x.status)}</span><br><small>${escapeHTML(x.date)}</small></p>`).join(""):'<p class="empty">Todavía no tienes depósitos.</p>';const ao=document.getElementById("adminOrders");if(ao)ao.innerHTML=d.orders.length?d.orders.map((o,i)=>`<div class="notice"><b>${escapeHTML(o.product)}</b> · ID ${escapeHTML(o.player)}<br>${escapeHTML(o.method)} · ${escapeHTML(o.status)}<div class="row" style="margin-top:8px"><button class="small" onclick="setOrderStatus(${i},'Aprobado (demo)')">Aprobar</button><button class="danger small" onclick="setOrderStatus(${i},'Rechazado (demo)')">Rechazar</button></div></div>`).join(""):'<p class="empty">No hay pedidos.</p>';const ad=document.getElementById("adminDeposits");if(ad)ad.innerHTML=d.deposits.length?d.deposits.map((x,i)=>`<div class="notice"><b>${escapeHTML(x.amount)} ${escapeHTML(x.currency)}</b> · ${escapeHTML(x.method)}<br>${escapeHTML(x.status)}<div class="row" style="margin-top:8px"><button class="small" onclick="approveDeposit(${i})">Aprobar (demo)</button><button class="danger small" onclick="rejectDeposit(${i})">Rechazar</button></div></div>`).join(""):'<p class="empty">No hay depósitos.</p>';const sh=document.getElementById("supportHistory");if(sh)sh.innerHTML=d.support.length?'<h3>Mensajes guardados</h3>'+d.support.map(m=>`<p>${escapeHTML(m.message)} <small>${escapeHTML(m.date)}</small></p>`).join(""):""}
+function createOrder(e){e.preventDefault();const player=document.getElementById("playerId").value.trim();if(!player){notify("Escribe tu ID de jugador.");return}const d=data();d.orders.unshift({player,product:document.getElementById("productChoice").value,method:document.getElementById("paymentMethod").value,note:document.getElementById("paymentNote").value,status:"Pendiente (demo)",date:new Date().toLocaleString()});save(d);e.target.reset();notify("Pedido guardado en este dispositivo. No se realizó una recarga real.");navigate("orders")}
+function createDeposit(e){e.preventDefault();const amount=Number(document.getElementById("depositAmount").value);if(!Number.isFinite(amount)||amount<=0){notify("Introduce un importe válido.");return}const d=data();d.deposits.unshift({amount,currency:document.getElementById("depositCurrency").value,method:document.getElementById("depositMethod").value,reference:document.getElementById("depositReference").value,status:"Pendiente (demo)",date:new Date().toLocaleString()});save(d);e.target.reset();notify("Solicitud guardada localmente. No se ha procesado ningún pago.");navigate("orders")}
+function saveProfile(e){e.preventDefault();const d=data();d.profile={name:document.getElementById("accountName").value.trim(),email:document.getElementById("accountEmail").value.trim()};save(d);notify("Perfil guardado en este navegador.")}
+function clearProfile(){document.getElementById("accountName").value="";document.getElementById("accountEmail").value="";notify("Campos limpiados.")}
+function sendSupport(e){e.preventDefault();const msg=document.getElementById("supportMessage").value.trim();if(!msg)return;const d=data();d.support.unshift({message:msg,date:new Date().toLocaleString()});save(d);e.target.reset();notify("Mensaje guardado localmente; todavía no se envía a soporte.");refresh()}
+function setOrderStatus(i,status){const d=data();if(!d.orders[i])return;d.orders[i].status=status;save(d);refresh();notify("Estado de pedido actualizado en la demo.")}
+function approveDeposit(i){const d=data();if(!d.deposits[i])return;const x=d.deposits[i];if(x.status.startsWith("Aprobado")){notify("Este depósito ya fue aprobado.");return}x.status="Aprobado (demo)";if(x.currency==="USD"||x.currency==="USDT")d.balance+=Number(x.amount);save(d);refresh();notify("Depósito marcado como aprobado en la demo. El saldo es ficticio/local.")}
+function rejectDeposit(i){const d=data();if(!d.deposits[i])return;d.deposits[i].status="Rechazado (demo)";save(d);refresh();notify("Depósito rechazado en la demo.")}
+function clearDemo(){if(!confirm("¿Borrar todas las solicitudes y datos de prueba guardados en este navegador?"))return;localStorage.removeItem(KEY);refresh();notify("Datos de prueba borrados.")}
+function init(){const grid=document.getElementById("productGrid"),sel=document.getElementById("productChoice");PRODUCTS.forEach(p=>{grid.insertAdjacentHTML("beforeend",`<div class="card"><h3>${escapeHTML(p)}</h3><div class="price">Precio pendiente</div><button onclick="pickProduct('${p.replace(/'/g,"\\'")}')">Solicitar</button></div>`);sel.insertAdjacentHTML("beforeend",`<option>${escapeHTML(p)}</option>`)});const d=data();document.getElementById("accountName").value=d.profile.name||"";document.getElementById("accountEmail").value=d.profile.email||"";if(localStorage.getItem("nexusTheme")==="light")document.body.classList.add("light");refresh()}
+function pickProduct(p){document.getElementById("productChoice").value=p;navigate("shop");document.getElementById("playerId").focus()}
+document.addEventListener("DOMContentLoaded",init);
+</script>
+</body>
+</html>
